@@ -1,8 +1,11 @@
 package com.xiaozu.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Flight {
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date ItinerarDate;
     private String Airline;
     private String FlightNumber;
@@ -10,7 +13,9 @@ public class Flight {
     private String ToCity;
     private Double Price;
     private Double PunctualityRate;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date FromDateTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private  Date ToDateTime;
 
     public Date getItinerarDate() {
